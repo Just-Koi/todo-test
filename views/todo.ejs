@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .gradient-custom {
+            background: #cc2b5e;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #753a88, #cc2b5e, #ec008c, #fc6767, #C6FFDD, #FBD786, #f7797d, #7F7FD5, #86A8E7, #91EAE4, #8360c3, #2ebf91, #59C173, #a17fe0, #5D26C1);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #753a88, #cc2b5e, #ec008c, #fc6767, #C6FFDD, #FBD786, #f7797d, #7F7FD5, #86A8E7, #91EAE4, #8360c3, #2ebf91, #59C173, #a17fe0, #5D26C1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            transition: background 1s ease;
+            animation: gradientCircle 60s 60s ease infinite;
+            background-size: 600% 600%;
+            background-position: 0% 0%;
+        }
+        @keyframes gradientCircle {
+            0%{
+                background-position: 0% 0%;
+            }
+            7.69%{
+                background-position: 0% 25%;
+            }
+            15.38%{
+                background-position: 0% 50%;
+            }
+            23.07%{
+                background-position: 50% 50%;
+            }
+            30.76%{
+                background-position: 50% 75%;
+            }
+            38.45%{
+                background-position: 75% 75%;
+            }
+            46.14%{
+                background-position: 75% 100%;
+            }
+            53.83%{
+                background-position: 100% 100%;
+            }
+            61.52%{
+                background-position: 75% 100%;
+            }
+            69.21%{
+                background-position: 75% 75%;
+            }
+            76.9%{
+                background-position: 50% 75%;
+            }
+            84.59%{
+                background-position: 50% 50%;
+            }
+            92.28%{
+                background-position: 50% 25%;
+            }
+            94%{
+                background-position: 25% 25%;
+            }
+            96.5%{
+                background-position: 25% 0%;
+            }
+            100%{
+                background-position: 0% 0%;
+            }
+        }
+        .big-shadow{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .md-shadow{
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            transition: .65s ease;
+        }
+        .md-shadow-after{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            opacity: 0.5;
+            animation: appearShadow 1.5s 0s ease forwards;
+            transition: opacity .65s ease;
+        }
+        @keyframes appearShadow{ from{opacity: 0.5;} to{opacity: 1;} }
+        .sm-shadow{
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        }
+        .transparent50-bg{
+            background: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(50px);
+        }
+        .transparent25-bg{
+            background: rgba(255, 255, 255, .25);
+            backdrop-filter: blur(25px);
+            transition: background .65s ease;
+        }
+        .checkme{
+            margin: 0 1rem 0 0;
+            height: 50px;
+            width: 50px;
+        }
+        .checkme .icon-wrapper{
+            height: 100%;
+            width: 100%;
+            padding: 25px;
+            border-radius: 50% 50%;
+            border: 2px solid #59C173;
+            position: relative;
+            cursor: pointer;
+            transition: background .65s ease;
+        }
+        .checkme .icon-wrapper i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+        }
+        .checkme .icon-wrapper:hover{
+            background: #59C173;
+        }
+        .checkme .icon-wrapper:hover .transparent25-bg{
+            background: rgba(255, 255, 255, .5);
+        }
+        .btn-gc{
+            background: rgba(89, 193, 115, .5);
+            border: 2px solid #59C173;
+            transition: .65s ease;
+        }
+        .btn-gc:hover{
+            background: #59C173;
+            border: 2px solid #397949;
+        }
+    </style>
+
+</head>
+<body>
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100 d-flex justify-content-center align-items-center">
+    
+            <div class="card transparent50-bg big-shadow w-100" style="max-width: 600px;">
+                <div class="card-body p-5">
+    
+                    <!-- add task - start -->
+                    <form class="d-flex justify-content-center align-items-center mb-4">
+                        <div class="form-outline flex-fill">
+                            <input type="text" id="form2" class="form-control" placeholder="Add task ...">
+                        </div>
+                        <button type="submit" class="btn btn-gc ms-2">Add</button>
+                    </form>
+                    <!-- add task - end -->
+    
+                    <!-- tasks - start -->
+                    <ul class="list-group mb-0">
+                        <li class="list-group-item d-flex align-items-center border-0 mb-0 rounded transparent25-bg md-shadow">
+                            <input class="form-check-input me-3 d-none" type="checkbox" value="" aria-label="..." id="check" name="check">
+                            <label for="check" class="checkme">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </label>
+                            <div class="text-wrapper">
+                                <h3 class="title">Drink Coffee</h3>
+                                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit veniam quas quia soluta doloribus animi porro voluptates cumque laborum consectetur deleniti repudiandae error aperiam molestias reiciendis officiis vero, dolore eveniet?</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- tasks - end -->
+    
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $('.icon-wrapper').hover(() => {
+                $('.transparent25-bg').css('background', 'rgba(255, 255, 255, .5)');
+                $('.list-group-item').addClass('md-shadow-after');
+            });
+            $('.icon-wrapper').mouseleave(() => {
+                $('.transparent25-bg').css('background', 'rgba(255, 255, 255, .25)');
+                $('.list-group-item').removeClass('md-shadow-after');
+            });
+        });
+    </script>
+
+</body>
+</html>
