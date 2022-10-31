@@ -190,8 +190,10 @@
                     <!-- tasks - start -->
                     <ul class="list-group mb-0">
 
-                    <!--
-                        <li class="list-group-item d-flex align-items-center border-0 mb-0 rounded transparent25-bg md-shadow">
+                    <%
+                    for (var i = 0; i < tasks.length; i++) {
+                    %>
+                        <li id="tasknumber<%= i %>" class="list-group-item d-flex align-items-center border-0 mb-0 rounded transparent25-bg md-shadow">
                             <input class="form-check-input me-3 d-none" type="checkbox" value="" aria-label="..." id="check" name="check">
                             <label for="check" class="checkme">
                                 <div class="icon-wrapper">
@@ -199,28 +201,10 @@
                                 </div>
                             </label>
                             <div class="text-wrapper">
-                                <h3 class="title">Drink Coffee</h3>
-                                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit veniam quas quia soluta doloribus animi porro voluptates cumque laborum consectetur deleniti repudiandae error aperiam molestias reiciendis officiis vero, dolore eveniet?</p>
+                                <h3 class="title"><%= tasks[i].name %></h3>
+                                <p class="description"><%= tasks[i].description %></p>
                             </div>
-                        </li> 
-                    -->
-
-                    <%
-                    for (var i = 0; i < tasks.length; i++) {
-                        tasks[i];
-                    %>
-                    <li id="taskNumber<%=tasknumber%>" class="list-group-item d-flex align-items-center border-0 mb-0 rounded transparent25-bg md-shadow">
-                        <input class="form-check-input me-3 d-none" type="checkbox" value="" aria-label="..." id="check" name="check">
-                        <label for="check" class="checkme">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-check"></i>
-                            </div>
-                        </label>
-                        <div class="text-wrapper">
-                            <h3 class="title"><%= taskname %></h3>
-                            <p class="description"><%= taskdescription %></p>
-                        </div>
-                    </li>
+                        </li>
                     <%
                     }
                     %>

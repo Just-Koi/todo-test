@@ -11,7 +11,7 @@ app.get("/", function(req, res){
 
     res.sendFile(__dirname + "/views/todo.ejs");
 
-    //taks
+    //tasks
     let tasks = [];
     app.post("/", function(req, res){
         let taskName = req.body.taskName;
@@ -21,18 +21,14 @@ app.get("/", function(req, res){
             name: taskName,
             description: content
         };
+        tasks.push(taskItem); 
+
         console.log(taskItem);
-        tasks.push(taskItem);
 
-        res.render('todo', {
-            tasks: tasks,
-            taskname: taskItem.name,
-            taskdescription: taskItem.description
-        });
+        res.render('todo', {tasks: tasks});
     });
-
-    console.log(tasks);
-    res.render('todo');
+    
+    res.render('todo', {tasks: tasks});
 
 });
 
