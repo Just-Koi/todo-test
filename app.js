@@ -5,27 +5,38 @@ const ejs = require('ejs');
 const app = express();
 
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function(req, res){
 
     res.sendFile(__dirname + "/views/todo.ejs");
 
-    //date
-    let date = new Date
-    let day = date.getDay();
-    let month = date.getMonth();
-    let year = date.getFullYear();
+    //taks
+    let tasks = [];
+    app.post("/", function(req, res){
+        let taskName = req.body.taskName;
+        let content = req.body.taskDescription;
 
-    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        let taskItem = {
+            name: taskName,
+            description: content
+        };
+        console.log(taskItem);
+        tasks.push(taskItem);
 
-    let mth = months[month];
+        res.render('todo', {
+            tasks: tasks,
+            taskname: taskItem.name,
+            taskdescription: taskItem.description
+        });
+    });
 
+    console.log(tasks);
     res.render('todo');
 
 });
 
-app.listen(4000, () => {
-    console.log("listening on http://localhost:4000");
+app.listen(5000, () => {
+    console.log("listening on local: http://localhost:5000");
 });
 
