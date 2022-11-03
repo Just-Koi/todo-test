@@ -11,9 +11,24 @@ app.get("/", function(req, res){
 
     res.sendFile(__dirname + "/views/todo.ejs");
 
+    //There is no work without some coffee and jellys
+    let coffeeBeforeWork = {
+        name: 'Drink coffee',
+        description: 'Remember to drink coffee before getting to work!'
+    };
+    let jellysBeforeWork = {
+        name: 'Eat Jellys',
+        description: 'Remember to eat yummy jellys before getting to work!'
+    };
+
     //tasks
-    let tasks = [];
-    app.post("/", function(req, res){
+    let tasks = [coffeeBeforeWork, jellysBeforeWork];
+    for (let i = 0; i < tasks.length; i++) {
+        var checkBox = req.body.checkBox + i;
+    }
+
+    //add task
+    app.post("/add-task", function(req, res){
         let taskName = req.body.taskName;
         let content = req.body.taskDescription;
 
@@ -22,13 +37,22 @@ app.get("/", function(req, res){
             description: content
         };
         tasks.push(taskItem); 
-
         console.log(taskItem);
 
-        res.render('todo', {tasks: tasks});
+        res.redirect("/app");
     });
-    
-    res.render('todo', {tasks: tasks});
+
+    //clear tasks
+
+    //app
+    app.get("/app", function(req, res){
+        res.render('todo', {
+            tasks: tasks,
+            checkBox: checkBox
+        });
+    });
+
+    res.redirect("/app");
 
 });
 
