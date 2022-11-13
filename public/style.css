@@ -1,0 +1,201 @@
+section,
+.container {
+  min-height: 1000px;
+}
+
+.gradient-custom {
+  background: hsl(232deg, 73%, 65%);
+  background: linear-gradient(90deg, hsl(232deg, 73%, 65%) 0%, hsl(279deg, 33%, 48%) 100%);
+  background: -webkit-linear-gradient(90deg, hsl(232deg, 73%, 65%) 0%, hsl(279deg, 33%, 48%) 100%);
+  transition: background 1s ease;
+  -webkit-animation: gradientCircle 60s ease infinite;
+          animation: gradientCircle 60s ease infinite;
+  background-size: 1000% 1000%;
+  background-position: 0% 0%;
+}
+@-webkit-keyframes gradientCircle {
+  0% {
+    background-position: 0% 0%;
+  }
+  7.69% {
+    background-position: 0% 25%;
+  }
+  15.38% {
+    background-position: 0% 50%;
+  }
+  23.07% {
+    background-position: 50% 50%;
+  }
+  30.76% {
+    background-position: 50% 75%;
+  }
+  38.45% {
+    background-position: 75% 75%;
+  }
+  46.14% {
+    background-position: 75% 100%;
+  }
+  53.83% {
+    background-position: 100% 100%;
+  }
+  61.52% {
+    background-position: 75% 100%;
+  }
+  69.21% {
+    background-position: 75% 75%;
+  }
+  76.9% {
+    background-position: 50% 75%;
+  }
+  84.59% {
+    background-position: 50% 50%;
+  }
+  92.28% {
+    background-position: 50% 25%;
+  }
+  94% {
+    background-position: 25% 25%;
+  }
+  96.5% {
+    background-position: 25% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes gradientCircle {
+  0% {
+    background-position: 0% 0%;
+  }
+  7.69% {
+    background-position: 0% 25%;
+  }
+  15.38% {
+    background-position: 0% 50%;
+  }
+  23.07% {
+    background-position: 50% 50%;
+  }
+  30.76% {
+    background-position: 50% 75%;
+  }
+  38.45% {
+    background-position: 75% 75%;
+  }
+  46.14% {
+    background-position: 75% 100%;
+  }
+  53.83% {
+    background-position: 100% 100%;
+  }
+  61.52% {
+    background-position: 75% 100%;
+  }
+  69.21% {
+    background-position: 75% 75%;
+  }
+  76.9% {
+    background-position: 50% 75%;
+  }
+  84.59% {
+    background-position: 50% 50%;
+  }
+  92.28% {
+    background-position: 50% 25%;
+  }
+  94% {
+    background-position: 25% 25%;
+  }
+  96.5% {
+    background-position: 25% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.card {
+  max-width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+
+.btn-gc {
+  background: rgba(89, 193, 115, 0.5);
+  border: 2px solid #59C173;
+  border-radius: 2.5px;
+  transition: 0.65s ease;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+.btn-gc:hover {
+  background: #59C173;
+  border: 2px solid #59C173;
+  letter-spacing: 10px;
+}
+
+.form-control-custom {
+  border-radius: 2.5px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  width: 100%;
+  color: #000;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: 0.5s ease;
+}
+.form-control-custom:focus, .form-control-custom:hover, .form-control-custom:active {
+  background: #fff;
+  letter-spacing: 2.5px;
+}
+
+.custom-textarea {
+  border-radius: 2.5px;
+  padding: 10px;
+  box-shadow: none !important;
+  outline: none !important;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  resize: none;
+  transition: 0.5s ease;
+}
+.custom-textarea:focus, .custom-textarea:hover, .custom-textarea:active {
+  background: #fff;
+  letter-spacing: 2.5px;
+}
+
+.list-group::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 3rem;
+}
+.list-group::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 3rem;
+}
+
+.list-group-item {
+  margin: 2rem 0;
+  padding: 10px 10px 15px 10px;
+  width: 90%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: 0.65s ease;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+.list-group-item .icon {
+  margin: 1rem;
+  height: 25px;
+  width: 25px;
+}
+
+#checkTask:checked ~ .text-wrapper .title,
+#checkTask:checked ~ .text-wrapper .description {
+  text-decoration: line-through;
+  color: #8360c3;
+}/*# sourceMappingURL=style.css.map */
